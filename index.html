@@ -116,7 +116,7 @@
         
         @keyframes title-underline {
             from {background: transparent; scale: 0;}  
-            to {background: rgb(172, 172, 172); transform: scale(1);} /* DEV BREAKPOINT*/
+            to {background: rgb(172, 172, 172); transform: scale(1); opacity: 0.45;} /* DEV BREAKPOINT*/
         }
 
         .subtitle {
@@ -994,7 +994,7 @@
         .seperator {
             height: 250px;
             width: 2.5px;
-            background: linear-gradient(to top, rgb(190, 190, 190),rgb(179, 179, 179));
+            background: linear-gradient(to top, rgba(190, 190, 190, 0.45),rgba(179, 179, 179, 0.45));
             background-repeat: no-repeat;
             border-radius: 15px;
             transform: rotate(45);
