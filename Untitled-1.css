@@ -1,0 +1,249 @@
+/* WEBSITE CONFIGURATION START */
+body {
+    background: linear-gradient(to right, rgb(212, 212, 212), rgb(255, 255, 255), rgb(212, 212, 212));
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+/* WEBSITE CONFIGURATION END */
+
+/* WEBSITE STYLING START */
+
+/* COMMON STYLES FOR .title, .subtitle, .profile-text, .project-text, .settings-text, .about-text */
+.text-container {
+    position: relative;
+    top: 45px;
+    opacity: 0;
+    scale: 0;
+    font-family: 'poppins';
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* COMMON STYLES FOR .profile, .project, .settings, .about */
+.icon-container {
+    position: absolute;
+    pointer-events: none;
+}
+
+/* COMMON STYLES FOR .profile:hover, .project:hover, .settings:hover, .about:hover */
+.icon-hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0.25;
+}
+
+/* COMMON STYLES FOR .profile:not(:hover), .project:not(:hover), .settings:not(:hover), .about:not(:hover) */
+.icon-not-hover {
+    transition: all 0.3s ease;
+    cursor: default;
+    opacity: 1;
+}
+
+/* PROFILE STYLES */
+.profile, .profile:hover .profile-img {
+    left: 0;
+    top: -15px;
+}
+
+.profile-text-container {
+    left: 27px;
+}
+
+/* PROJECT STYLES */
+.project, .project:hover .project-img {
+    left: 10%;
+    top: -15px;
+}
+
+.project-text-container {
+    left: 13px;
+}
+
+/* SETTINGS STYLES */
+.settings, .settings:hover .settings-img {
+    right: 30px;
+    top: -15px;
+}
+
+.settings-text-container {
+    left: 14.5px;
+}
+
+/* ABOUT STYLES */
+.about, .about:hover .about-img {
+    right: 14%;
+    top: -15px;
+}
+
+.about-text-container {
+    left: 34.5px;
+}
+
+/* COMMON ANIMATION FOR TEXT */
+@keyframes text-show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* PROFILE ANIMATION */
+.profile-text, .profile:hover .profile-text {
+    animation: text-show 0.5s forwards;
+    animation-delay: 0.15s;
+}
+
+/* PROJECT ANIMATION */
+.project-text, .project:hover .project-text {
+    animation: text-show 0.5s forwards;
+    animation-delay: 0.15s;
+}
+
+/* SETTINGS ANIMATION */
+.settings-text, .settings:hover .settings-text {
+    animation: text-show 0.5s forwards;
+    animation-delay: 0.15s;
+}
+
+/* ABOUT ANIMATION */
+.about-text, .about:hover .about-text {
+    animation: text-show 0.5s forwards;
+    animation-delay: 0.15s;
+}
+
+/* ICON RENDERING ANIMATION */
+.icon-render {
+    position: absolute;
+    top: -30px;
+    image-rendering: optimizeQuality;
+    filter: opacity(0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    animation: icon-appear 1s forwards;
+}
+
+@keyframes icon-appear {
+    from { filter: opacity(0); scale: 0.44; pointer-events: none; }
+    to { filter: opacity(1); filter: invert(30%); transform: translateY(60px); scale: 0.6; pointer-events: all; }
+}
+
+/* UNDERLINE STYLES */
+.underline {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    translate: -50%;
+    opacity: 0;
+    border-radius: 20px;
+    height: 4px;
+    width: 40px;
+    background-color: rgb(122, 122, 122);
+    pointer-events: none;
+}
+
+/* UNDERLINE ANIMATION */
+@keyframes underline-show {
+    from { transform: scale(0.25); }
+    to { opacity: 1; transform: scale(1); top: 15px; box-shadow: 0px 0px 15px 0 rgba(169, 169, 169, 1); }
+}
+
+/* UNDERLINE ANIMATION ON HOVER */
+.icon-hover .underline {
+    animation: underline-show 0.5s forwards;
+}
+
+/* UNDERLINE ANIMATION NOT ON HOVER */
+.icon-not-hover .underline {
+    animation: underline-back 0.5s forwards;
+}
+
+@keyframes underline-back {
+    from { transform: scale(1); opacity: 1; top: 15px; }
+    to { opacity: 0; top: 20px; box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.5); }
+}
+
+/* COMMON ANIMATION FOR ICONS */
+@keyframes icon-appear {
+    from { filter: opacity(0); scale: 0.44; pointer-events: none; }
+    to { filter: opacity(1); filter: invert(30%); transform: translateY(60px); scale: 0.6; pointer-events: all; }
+}
+
+/* QUICK VIEW STYLES */
+.quickview {}
+
+/* QUICK VIEW TEXT ANIMATION */
+.quick-news {
+    opacity: 0;
+    font-family: 'Arial';
+    font-size: 28px;
+    background: linear-gradient(to right, rgb(200, 200, 200), rgb(180, 180, 180));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: news-show 0.5s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes news-show {
+    from { opacity: 0; scale: 0.5; }
+    to { opacity: 1; transform: translateY(25%); scale: 1; }
+}
+
+/* QUICK VIEW ICON AND TEXT CONTAINERS */
+.qw-news, .qw-projects, .qw-socials {
+    position: absolute;
+    top: 15%;
+}
+
+/* QUICK VIEW PROJECT LOGO AND TEXT CONTAINER */
+.project-pluto-client {
+    position: absolute;
+    top: 33%;
+    left: 10%;
+}
+
+.pluto-client-logo {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    translate: -34%;
+}
+
+/* QUICK VIEW TEXT CONTAINERS */
+.news-text, .text, .socials {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    translate: -10%;
+    font-family: 'Arial';
+    font-size: 20px;
+    letter-spacing: 2px;
+    display: block;
+}
+
+/* SEPARATOR ANIMATION */
+.seperator {
+    height: 250px;
+    width: 2.5px;
+    background: linear-gradient(to top, rgb(190, 190, 190), rgb(179, 179, 179));
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    transform: rotate(45);
+    opacity: 0;
+    animation: seperator-show 1s forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes seperator-show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* SOCIALS ANIMATION */
+.socials {
+    animation: text-show 0.5s forwards;
+}
+
+/* WEBSITE STYLING END */

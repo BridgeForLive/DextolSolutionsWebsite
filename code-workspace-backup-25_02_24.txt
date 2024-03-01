@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEXTOLREINIGER</title>
+
+    
+
+    <style>
+        /* WEBSITE CONFIGURATION START*/
+
+        body {
+            /* BACKGROUND */
+            background: linear-gradient(to right, rgb(212, 212, 212), rgb(255, 255, 255) , rgb(212, 212, 212));
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            padding: 0;
+            
+        }
+
+        /* WEBSITE CONFIGURATION END*/
+
+        /* WEBSITE STYLING START*/
+
+        .title {    /* <-- CLASS EXMPL CODING META*/
+        
+        /* POSITION */
+
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        translate: -50%;
+        
+        text-transform: uppercase;
+        
+
+        /* STYLE & CONFIGURATION*/
+        
+        font-family: 'Yu Gothic';
+        font-size: 50px;
+        font-weight: bolder;
+        letter-spacing: 5px;
+
+        background: linear-gradient(45deg, rgb(172, 172, 172), rgb(195, 195, 195), rgb(172, 172, 172));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; /* DEV BREAKPOINT*/
+
+        background-size: contain;
+        
+        opacity: 0;
+        animation: title 0.25s forwards; 
+        animation-delay: 0.3s;
+
+
+            &::before {
+                    content: attr(data-content);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    mix-blend-mode: screen;
+                    animation: shine 1.75s infinite;
+                    animation-delay: 0.5s;
+                    background-size: 200%;
+                    transition:all 0.5s ease;
+            }
+        }
+
+ 
+
+        @keyframes title {
+            from {opacity: 0; scale: 0;}
+            to {opacity: 1; transform: translateY(60px); scale: 1;} 
+        }
+
+        @keyframes shine {
+            0% {background-position: -60;}
+            100% {background-position: 150%;}
+        }
+
+        
+
+        .title-underline {
+            position: absolute;
+            margin-top: -1px;
+            left: 50%;
+            translate: -50%;
+            
+
+            width: 100%;
+            height: 3px;
+            border-radius: 5px;
+
+            animation: title-underline 1s forwards;
+            /*animation-timing-function: cubic-bezier(0.25, 0.1, 0.76, 1.05);*/
+            animation-delay: 0.75s;
+            
+
+
+        }
+
+        
+        @keyframes title-underline {
+            from {background: transparent; scale: 0;}  
+            to {background: rgb(172, 172, 172); transform: scale(1);} /* DEV BREAKPOINT*/
+        }
+
+        .subtitle {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            translate: -50%;
+
+            font-family: 'Yu Gothic';
+            font-size: 24px;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            
+
+            background: linear-gradient(45deg, rgb(150, 150, 150),rgb(172, 172, 172),rgb(150, 150, 150));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* DEV BREAKPOINT*/
+            background-size: contain;
+
+            opacity: 0;
+            animation: subtitle 0.75s forwards; 
+            animation-delay: 1s;
+            &::before {
+                    content: attr(data-content);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    mix-blend-mode: screen;
+                    animation: subtitle-shine 1.75s forwards;
+                    animation-delay: 1.5s;
+                    background-size: 200%;
+                    transition:all 0.5s ease;
+            }
+        }
+        @keyframes subtitle {
+            from {opacity: 0; scale: 0;}
+            to {opacity: 1; transform: translateY(75px); scale: 1;} 
+        }
+        
+        @keyframes subtitle-shine {
+            0% {background-position: -60%;}
+            100% {background-position: 150%;}
+        }
+        /*  ICONS CODE META */
+
+        .web-icns {
+            /* MAIN CONTAINER */
+        }
+
+        .profile {
+            /*CONTAINER CLASS*/
+            position: absolute;
+            left: 0;
+            top: -15px;
+
+            pointer-events: none;
+
+        }
+
+        .profile:hover .profile-img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0.25;
+        }
+
+        .profile:not(:hover) .profile-img {
+            transition: all 0.3s ease;
+            cursor: default;
+            opacity: 1;
+        }
+
+        .profile-text {
+            position: relative;
+            top: 45px;
+            left: 27px;
+
+            
+            color: rgba(32, 32, 32, 0.376);
+
+            font-family: 'Arial Black';
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            opacity: 0;
+            scale: 0;
+        }
+
+        .profile:hover .profile-text {
+            animation: profile-text-show 0.5s forwards;
+            animation-delay: 0.15s;
+        }
+
+        .profile:not(:hover) .profile-text {
+            animation: profile-text-hide 0.5s forwards; /*DEV:ERROR Fix that hide animation gets called at start */
+        }
+
+        @keyframes profile-text-show {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes profile-text-hide {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+
+        .profile-render {
+            /* LOGO CLASS*/
+            position: absolute;
+            top: -30px;
+            image-rendering: optimizeQuality;
+        
+            filter: opacity(0);
+            pointer-events: none;
+
+            transition: all 0.3s ease;
+
+            
+            animation: ico-profile 1s forwards;
+            animation-delay: 1.75s;
+            
+        }
+
+
+        @keyframes ico-profile {
+            from {filter: opacity(0); scale: 0.44; pointer-events: none;}
+            to {filter: opacity(1); filter: invert(30%); transform: translateY(60px); scale: 0.6; pointer-events: all;}
+        }
+
+
+
+
+
+        #testevent.clicked {
+            filter: opacity(0);
+        }
+
+        .profile-underline {
+            /* OWN PERSONALISED UNDERLINE CLASS (OPUC)*/
+            position: relative;
+            top: 20px;
+            left: 50%;
+            translate: -50%;
+            opacity: 0;
+
+            border-radius: 20px;
+
+            height: 4px;
+            width: 40px;
+            
+            background-color: rgb(122, 122, 122);
+
+            pointer-events: none;
+        }
+
+
+
+        @keyframes set-under {
+            from {transform: scale(0.25);}
+            to {opacity: 1; transform : scale(1); top: 15px; box-shadow: 0px 0px 15px 0 rgba(169, 169, 169, 1);}
+        }
+
+        .profile:hover .profile-underline {
+            animation: set-under 0.5s forwards;
+
+        }
+
+        .profile-underline:not(:hover) {
+            animation: set-under-back 0.5s forwards;
+        }
+
+        @keyframes set-under-back {
+            from {transform: scale(1); opacity: 1; top: 15px;}
+            to {opacity: 0; top: 20px; box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.5);}
+        }
+
+        .project {
+            /*CONTAINER CLASS*/
+            position: absolute;
+            left: 10%;
+            top: -15px;
+
+            pointer-events: none;
+        }
+
+        .project:hover .project-img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0.25;
+        }
+
+        .project:not(:hover) .project-img {
+            transition: all 0.3s ease;
+            cursor: default;
+            opacity: 1;
+        }
+
+        .project-text {
+            position: relative;
+            top: 45px;
+            left: 13px;
+
+            
+            color: rgba(32, 32, 32, 0.376);
+
+            font-family: 'Arial Black';
+            font-size: 18px;
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: 0;
+            scale: 0;
+        }
+
+        .project:hover .project-text {
+            animation: project-text-show 0.5s forwards;
+            animation-delay: 0.15s;
+        }
+
+        .project:not(:hover) .project-text {
+            animation: project-text-hide 0.5s forwards; /*DEV:ERROR Fix that hide animation gets called at start */
+        }
+
+        @keyframes project-text-show {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes project-text-hide {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+
+        .project-render {
+            /* LOGO CLASS*/
+            position: absolute;
+            top: -30px;
+            image-rendering: optimizeQuality;
+        
+            filter: opacity(0);
+            pointer-events: none;
+
+            transition: all 0.3s ease;
+
+            animation: ico-project 1s forwards;
+            animation-delay: 2s;
+            
+        }
+
+
+        @keyframes ico-project {
+            from {filter: opacity(0); scale: 0.44; pointer-events: none;}
+            to {filter: opacity(1); filter: invert(30%); transform: translateY(60px); scale: 0.6; pointer-events: all;}
+        }
+
+
+
+
+
+        #testevent.clicked {
+            filter: opacity(0);
+        }
+
+        .project-underline {
+            /* OWN PERSONALISED UNDERLINE CLASS (OPUC)*/
+            position: relative;
+            top: 20px;
+            left: 50%;
+            translate: -50%;
+            opacity: 0;
+
+            border-radius: 20px;
+
+            height: 4px;
+            width: 40px;
+            
+            background-color: rgb(122, 122, 122);
+
+            pointer-events: none;
+        }
+
+
+
+        @keyframes set-under {
+            from {transform: scale(0.25);}
+            to {opacity: 1; transform : scale(1); top: 15px; box-shadow: 0px 0px 15px 0 rgba(169, 169, 169, 1);}
+        }
+
+        .project:hover .project-underline {
+            animation: set-under 0.5s forwards;
+
+        }
+
+        .project-underline:not(:hover) {
+            animation: set-under-back 0.5s forwards;
+        }
+
+        @keyframes set-under-back {
+            from {transform: scale(1); opacity: 1; top: 15px;}
+            to {opacity: 0; top: 20px; box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.5);}
+        }
+
+        .settings {
+            /*CONTAINER CLASS*/
+            position: absolute;
+            right: 30px;
+            top: -15px;
+
+            pointer-events: none;
+        }
+
+        .settings:hover .settings-img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0.25;
+        }
+
+        .settings:not(:hover) .settings-img {
+            transition: all 0.3s ease;
+            cursor: default;
+            opacity: 1;
+        }
+
+        .settings-text {
+            position: relative;
+            top: 45px;
+            left: 14.5px;
+
+            
+            color: rgba(32, 32, 32, 0.376);
+
+            font-family: 'Arial Black';
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            opacity: 0;
+            scale: 0;
+        }
+
+        .settings:hover .settings-text {
+            animation: settings-text-show 0.5s forwards;
+            animation-delay: 0.15s;
+        }
+
+        .settings:not(:hover) .settings-text {
+            animation: settings-text-hide 0.5s forwards; /*DEV:ERROR Fix that hide animation gets called at start */
+        }
+
+        @keyframes settings-text-show {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes settings-text-hide {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+
+        .settings-render {
+            /* LOGO CLASS*/
+            position: absolute;
+            top: -30px;
+            image-rendering: optimizeQuality;
+
+            filter: opacity(0);
+            pointer-events: none;
+
+            transition: all 0.3s ease;
+
+            
+            animation: ico-settings 1s forwards;
+            animation-delay: 1.75s;
+            
+        }
+
+
+        @keyframes ico-settings {
+            from {filter: opacity(0); scale: 0.44; pointer-events: none;}
+            to {filter: opacity(1); filter: invert(30%); transform: translateY(60px); scale: 0.6; pointer-events: all;}
+        }
+
+
+
+
+
+        #testevent.clicked {
+            filter: opacity(0);
+        }
+
+        .settings-underline {
+            /* OWN PERSONALISED UNDERLINE CLASS (OPUC)*/
+            position: relative;
+            top: 20px;
+            left: 50%;
+            translate: -50%;
+            opacity: 0;
+
+            border-radius: 20px;
+
+            height: 4px;
+            width: 40px;
+            
+            background-color: rgb(122, 122, 122);
+
+            pointer-events: none;
+        }
+
+
+
+        @keyframes set-under {
+            from {transform: scale(0.25);}
+            to {opacity: 1; transform : scale(1); top: 15px; box-shadow: 0px 0px 15px 0 rgba(169, 169, 169, 1);}
+        }
+
+        .settings:hover .settings-underline {
+            animation: set-under 0.5s forwards;
+
+        }
+
+        .settings-underline:not(:hover) {
+            animation: set-under-back 0.5s forwards;
+        }
+
+        @keyframes set-under-back {
+            from {transform: scale(1); opacity: 1; top: 15px;}
+            to {opacity: 0; top: 20px; box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.5);}
+        }
+
+        .about {
+            /*CONTAINER CLASS*/
+            position: absolute;
+            right: 14%;
+            top: -15px;
+
+            pointer-events: none;
+        }
+
+        .about:hover .about-img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0.25;
+        }
+
+        .about:not(:hover) .about-img {
+            transition: all 0.3s ease;
+            cursor: default;
+            opacity: 1;
+        }
+
+        .about-text {
+            position: relative;
+            top: 45px;
+            left: 34.5px;
+
+            
+            color: rgba(32, 32, 32, 0.376);
+
+            font-family: 'Arial Black';
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            opacity: 0;
+            scale: 0;
+        }
+
+        .about:hover .about-text {
+            animation: about-text-show 0.5s forwards;
+            animation-delay: 0.15s;
+        }
+
+        .about:not(:hover) .about-text {
+            animation: about-text-hide 0.5s forwards; /*DEV:ERROR Fix that hide animation gets called at start */
+        }
+
+        @keyframes about-text-show {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes about-text-hide {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+
+        .about-render {
+            /* LOGO CLASS*/
+            position: absolute;
+            top: -30px;
+            image-rendering: optimizeQuality;
+
+            filter: opacity(0);
+            pointer-events: none;
+
+            transition: all 0.3s ease;
+
+            
+            animation: ico-about 1s forwards;
+            animation-delay: 2s;
+            
+        }
+
+
+        @keyframes ico-about {
+            from {filter: opacity(0); scale: 0.44; pointer-events: none;}
+            to {filter: opacity(1); filter: invert(30%); transform: translateY(60px); scale: 0.6; pointer-events: all;}
+        }
+
+
+
+
+
+        #about-event.clicked {
+            
+        }
+
+        .about-underline {
+            /* OWN PERSONALISED UNDERLINE CLASS (OPUC)*/
+            position: relative;
+            top: 20px;
+            left: 50%;
+            translate: -50%;
+            opacity: 0;
+
+            border-radius: 20px;
+
+            height: 4px;
+            width: 40px;
+            
+            background-color: rgb(122, 122, 122);
+
+            pointer-events: none;
+        }
+
+
+
+        @keyframes set-under {
+            from {transform: scale(0.25);}
+            to {opacity: 1; transform : scale(1); top: 15px; box-shadow: 0px 0px 15px 0 rgba(169, 169, 169, 1);}
+        }
+
+        .about:hover .about-underline {
+            animation: set-under 0.5s forwards;
+
+        }
+
+        .about-underline:not(:hover) {
+            animation: set-under-back 0.5s forwards;
+        }
+
+        @keyframes set-under-back {
+            from {transform: scale(1); opacity: 1; top: 15px;}
+            to {opacity: 0; top: 20px; box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.5);}
+        }
+
+
+        /* QUICK VIEW */
+
+        .quickview {
+
+        }
+
+        .quick-news {
+            /*position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);*/
+        }
+
+        .projects-text {
+
+            opacity: 0;
+
+            font-family: 'Arial';
+            font-size: 28px;
+
+            background: linear-gradient(to right, rgb(200, 200, 200), rgb(180, 180, 180));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            animation: news-show 0.5s forwards;
+            animation-delay: 2s;
+        
+        }
+
+        @keyframes news-show {
+            from{opacity: 0; scale: 0.5;}
+            to{opacity: 1; transform: translateY(25%); scale: 1;}
+        }
+
+        /*.news-underline {
+            position: absolute;
+            margin-bottom: 1px;
+            left: 50%;
+            translate: -50%;
+
+            width: 75%;
+            height: 2px;
+            border-radius: 10px;
+
+            animation: news-underline 1s forwards;
+            animation-delay: 2.25s;
+        }
+
+        @keyframes news-underline {
+            from {background-color: transparent; transform: scale(0);}  
+            to {background: linear-gradient(to right, rgb(190, 190, 190), rgb(170, 170, 170)); transform: scale(1);} DEV BREAKPOINT
+        }*/
+
+        .qw-news {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            translate: -50%;
+        }
+
+        .news-text {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            translate: -50%;
+
+            font-family: 'Arial';
+            font-size: 20px;
+            letter-spacing: 2px;
+
+            display: block;
+        }
+
+        .qw-projects {
+            position: absolute;
+            top: 15%;
+            left: 10%;
+        }
+
+        .pluto-client-logo {
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            translate: -34%;
+
+        }
+
+        .project-pluto-client {
+            position: absolute;
+            top: 33%;
+            left: 10%;
+        }
+
+        .projects-text {
+
+
+            font-family: 'Segoe UI';
+            font-size: 24px;
+
+            letter-spacing: 2px;
+            text-transform: capitalize;
+
+            text-align: center;
+        }
+        
+        
+        .text {
+            position: absolute;
+            top: 25%;
+            left: 10%;
+            translate: -10%;
+
+            font-family: 'Arial';
+            font-size: 20px;
+            letter-spacing: 2px;
+
+            display: block;
+        }
+
+        .qw-socials {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+        }
+
+        .socials {
+            position: absolute;
+            top: 25%;
+            right: 10%;
+            translate: 10%;
+
+            font-family: 'Arial';
+            font-size: 20px;
+            letter-spacing: 2px;
+
+        }
+
+        .seperator {
+            height: 250px;
+            width: 2.5px;
+            background: linear-gradient(to top, rgb(190, 190, 190),rgb(179, 179, 179));
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            transform: rotate(45);
+
+            opacity: 0;
+
+            animation: seperator-show 1s forwards;
+            animation-delay: 2.5s;
+        }
+        @keyframes seperator-show {
+            from {opacity: 0;}  
+            to {opacity: 1;} /* DEV BREAKPOINT*/
+        }
+
+        .s1 {
+            position: absolute;
+            top: 26%;
+            left: 33.33%;
+        }
+
+        .s2 {
+            position: absolute;
+            top: 26%;
+            right: 33.33%;
+        }
+                
+
+        /* WEBSITE STYLING END */
+
+
+    </style>
+</head>
+<header>
+    <div class="web-title">
+        <span class="title" data-content="dextol solutions">dextol solutions
+            <div class="title-underline"></div>
+        </span>
+        <span class="subtitle" data-content="ENHANCE YOUR GAMING EXPERIENCE">ENHANCE YOUR GAMING EXPERIENCE
+            <div class="subtitle-underline"></div>
+        </span>
+    </div>
+    <div class="web-icns">
+        <div class="profile">
+            <span class="profile-render" id="profile-event">
+                <img src="src/ico/profile.png" class="profile-img">
+                <div class="profile-underline"></div>
+            </span>
+            <span class="profile-text">Profile</span> 
+        </div>
+        <div class="project">             
+                <div class="project-render" id="projects-event">
+                    <img src="src/ico/project.png" class="project-img">
+                    <div class="project-underline"></div> 
+                </div>
+                <span class="project-text">Projects</span>
+        </div>
+        <div class="settings">             
+            <div class="settings-render" id="settings-event">
+                <img src="src/ico/settings.png" class="settings-img">
+                <div class="settings-underline"></div> 
+            </div>
+            <span class="settings-text">Settings</span>
+        </div>
+        <div class="about" id="about-event">             
+            <div class="about-render" >
+                <img src="src/ico/about.png" class="about-img">
+                <div class="about-underline"></div> 
+            </div>
+            <span class="about-text">About</span>
+        </div>
+    </div>
+</header>
+
+
+<body>
+    <div class="quickview">
+            <span class="projects-text" style="position: absolute; top: 15%; left: 50%; translate: -50%; font-size: 33px; text-transform: uppercase; font-family: 'Yu Gothic'; letter-spacing: 5px; background: linear-gradient(to right, rgb(180, 180, 180), rgb(195, 195, 195)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Projects</span>
+        <div class="project-mcopt">
+            <span class="project-pluto-client" style="height: 50px; width: 450px; font-size: 20px; position: absolute; translate: 120% 40%; color: gray; font-family: 'Yu Gothic'; text-align: center;"><br>It's an Minecraft Mod Libary full of pro-optimization mods and Features, that entlighten your Minecraft Gaming Experience</span>
+            <img src="src/ico/mc-optimizer-logo.png">
+        </div>
+        <div class="seperator s1"></div>
+        <div class="pluto-client-container">
+            <span class="project-pluto-client" style="height: 50px; width: 450px; font-size: 20px; position: absolute; translate: -31.5% 40%; color: gray; font-family: 'Yu Gothic'; text-align: center;"><br>It's an Minecraft Mod Libary full of pro-optimization mods and Features, that entlighten your Minecraft Gaming Experience</span>
+            <img src="src/ico/pluto-client-logo.png" class="pluto-client-logo" style="scale: 1;"> 
+        </div>
+        <div class="seperator s2"></div>
+        <div class="project-universal">
+            <span class="project-pluto-client" style="height: 50px; width: 450px; font-size: 20px; position: absolute; right: 10%; translate: 270% 40%; color: gray; font-family: 'Yu Gothic'; text-align: center;"><br>It's an Minecraft Mod Libary full of pro-optimization mods and Features, that entlighten your Minecraft Gaming Experience</span>
+            <img src="src/ico/uni-optimizer-logo.png">
+        </div>
+        </div>
+    </div>
+
+
+
+<script>
+const profile = document.getElementById("profile-event");
+const projects = document.getElementById("projects-event")
+const settings = document.getElementById("settings-event")
+const about = document.getElementById("about-event")
+
+profile.addEventListener("click", function() {
+    window.location.href = 'profile.html';
+});
+
+projects.addEventListener("click", function() {
+    window.location.href = 'projects.html';
+});
+
+settings.addEventListener("click", function() {
+    window.location.href = 'settings.html';
+});
+
+about.addEventListener("click", function() {
+    window.location.href = 'about.html';
+});
+</script>
+</body>
+</html>
