@@ -1,0 +1,169 @@
+/* Basic styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+    background-color: #272727;
+    color: #fff;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Distribute items along the main axis */
+    align-items: center; /* Align items to the center */
+    padding: 35px 5%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    scale: 0.8;
+    cursor: pointer;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column; /* Place text in a column */
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.logo-text {
+    cursor: pointer;
+    margin-right: auto;
+    font-size: 24px;
+}
+
+.all-rights-reserved {
+    font-size: 10px;
+    
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav_link {
+    list-style: none;
+    text-align: center; /* Center the list items */
+}
+
+.nav_link li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_link li a {
+    transition: all 0.3s ease 0s;
+
+}
+
+.nav_link li a:hover {
+    color: #2953bb;
+}
+
+.dc-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #dbdbdb; /* Black background color */
+    color: #7289DA; /* Discord Blue color */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dc-btn:hover {
+    background-color: #7289DA; /* Discord Blue background color on hover */
+    color: #fff; /* White text color on hover */
+    box-shadow: 0 0 10px rgba(114, 137, 218, 0.7); /* Box shadow on hover */
+}
+
+.dl-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #dbdbdb; 
+    color: #41b727;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dl-btn:hover {
+    background-color: #41b72770; /* Discord Blue background color on hover */
+    color: #fff; /* White text color on hover */
+    box-shadow: 0 0 10px #41b72770; /* Box shadow on hover */
+}
+
+body {
+    text-align: center; /* Center align the text */
+}
+
+.body-container {
+    display: flex;
+    justify-content: center;
+    max-height: fit-content;
+}
+.body-content {
+    margin: 50px 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);*/
+    max-width: 800px;
+    margin-top: 0;
+}
+
+h1, h2 {
+    font-weight: lighter;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 36px; /* Larger font size for h1 */
+}
+
+
+.separator-line {
+    width: 30%;
+    margin: 10px auto;
+    border: 1px solid #fff; 
+    opacity: 0.5;
+}
+
+p {
+    font-size: 20px;
+    margin-top: 20px; /* Reduce the top margin for the paragraph */
+    line-height: 2; /* Adjust line height for better readability */
+}
+
+.body-container {
+    display: flex;
+    height: 100vh; /* Set the height of the container to full viewport height */
+}
+
+.body-content {
+    flex-grow: 1; /* Make each content section grow to fill the available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Add a little space between the projects */
+.body-content:not(:last-child) {
+    margin-right: 20px;
+}
