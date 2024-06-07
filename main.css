@@ -120,6 +120,7 @@ header {
     color: black;
     background-color: red;
     border-color: red;
+    cursor: pointer;
 }
 
 body {
