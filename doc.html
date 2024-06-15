@@ -11,12 +11,11 @@
             background-color: #000; /* Set the same background color as index.html */
             color: #fff; /* Text color */
             font-family: 'Poppins', sans-serif; /* Ensure consistency with index.html */
-            padding-top: 100px; /* Adjust based on your design */
         }
 
         .container {
             max-width: 800px; /* Limit content width */
-            margin: 0 auto;
+            margin: 15vh auto;
             padding: 0 20px;
         }
 
@@ -27,6 +26,14 @@
 
         p {
             line-height: 1.6;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        footer {
+            top: 100vh;
         }
     </style>
 </head>
@@ -40,14 +47,34 @@
             </div>
         </div>
         <div class="navbar-buttons">
-            <button class="zen-sl" id="navScroller">ZenSL</button>
-            <button id="docButton">Documentation</button>
-            <button id="projectsButton">Projects</button>
-            <button id="aboutButton">About</button>
+            <button id="bckButton" onclick="window.open('index.html')">< Back</button>
         </div>
     </div>
 
-
+    <div class="container">
+        <h1>ZenSL - Optimize Your Computer for Gaming!</h1>
+        <h2>What is ZenSL?</h2>
+        <p>ZenSL is a Windows optimizer that modifies Windows settings, game settings, and creates a smooth OS experience!</p>
+        <h2>Features</h2>
+        <ul>
+            <li>One-click optimization and reversion</li>
+            <li>Anti-OS instability</li>
+            <li>Optimization results in less latency and more frames per second (FPS) in games</li>
+        </ul>
+        <h2>What Settings Does ZenSL Affect?</h2>
+        <ul>
+            <li>Windows Power Plan settings</li>
+            <li>NVIDIA GPU panel settings and configuration</li>
+            <li>Intel Iris / Arc graphics panel settings</li>
+            <li>RAM, CPU, and disk settings (Intel & AMD)</li>
+            <li>Windows registry settings</li>
+            <li>Windows settings</li>
+            <li>Driver settings</li>
+        </ul>
+        <h2>What If Something Goes Wrong?</h2>
+        <p>You can revert the changes by entering the revert menu in ZenSL and pressing the "Revert Changes" button.</p>
+    </div>
+    
 
     <footer>
         <div class="footer-container">
