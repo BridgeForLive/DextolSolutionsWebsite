@@ -322,7 +322,7 @@ position: relative;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-padding: 30px 40px;
+padding: 10px 40px;
 font-size: 1.25em;
 background-color: #212529;
 box-shadow: 2px 1px 50px -4px rgba(0,0,0,0.1);
@@ -458,4 +458,13 @@ footer {
 .text-container p {
     font-weight: 200;
     margin-top: 0;
+}
+
+.warning-text {
+    color: red;
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto 0;
+    font-weight: 400; 
+    letter-spacing: 1px;
 }
