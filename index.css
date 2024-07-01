@@ -17,7 +17,6 @@ body {
 }
 
 /* NAVBAR START */
-
 .navbar {
     position: fixed;
     display: flex;
@@ -105,9 +104,7 @@ body {
     transform: translateY(1px);
 }
 
-
 /* Middle Container */
-
 .middle-container {
     position: absolute;
     top: 400px; /* Adjust as needed to position below the fixed navbar */
@@ -141,7 +138,6 @@ body {
 }
 
 /* Middle Button */
-
 .middle-container .text-container .middle-button {
     margin: 20px auto 0 auto; /* Top margin of 20px and auto margins on the sides */
     padding: 10px 20px;
@@ -183,7 +179,6 @@ body {
 }
 
 /* Animation */
-
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -199,9 +194,7 @@ body {
     animation: fadeInDown 2s ease-out;
 }
 
-
 /* Shooting Stars */
-
 .star {
     z-index: 0;
     position: absolute;
@@ -254,7 +247,7 @@ body {
     box-sizing: border-box;
     border-radius: 20px;
     transition: all 0.3s;
-} 
+}
 
 .bottom-section:hover {
     background: rgba(125, 125, 125, 0.2);
@@ -264,7 +257,6 @@ body {
     flex: 1; /* Take up remaining space */
     margin-right: 20px; /* Adjust spacing */
 }
-
 
 .text-section {
     flex: 1; /* Take up remaining space */
@@ -284,14 +276,18 @@ body {
     margin-top: 0;
     display: none;
 }
+
 .img-1 {
     border-radius: 10px;
     filter: brightness(0.9);
     opacity: 0.9;
     image-rendering: optimizeQuality;
     display: none;
-    -webkit-box-shadow: 2px 2px 25px 7px rgba(255,255,255,0.15); 
-    box-shadow: 2px 2px 25px 7px rgba(255,255,255,0.15);
+    -webkit-box-shadow: 2px 2px 25px 7px rgba(255, 255, 255, 0.15); 
+    box-shadow: 2px 2px 25px 7px rgba(255, 255, 255, 0.15);
+    margin: 20px auto; /* Centers the progress bar horizontally */
+    display: flex;
+    justify-content: center; /* Centers any inner content if necessary */
 }
 
 @keyframes slideInFromLeft {
@@ -308,41 +304,38 @@ body {
 .animate-image {
     animation: slideInFromLeft 0.5s ease-out;
 }
+
 .download-button {
-opacity: 0.25;
-/* opacity: 0.75; */
-display: none;
-margin-top: 25px;
-margin-left: auto;
-margin-right: auto;
-font-family: 'poppins';
-text-transform: capitalize;
-transition: all 0.2s;
-position: relative;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 10px 40px;
-font-size: 1.25em;
-background-color: #212529;
-box-shadow: 2px 1px 50px -4px rgba(0,0,0,0.1);
-border-color: #bcbfc2;
-color: #bcbfc2;
-border: solid 2px;
-border-radius: 2px;
-cursor: pointer;
-width: 250px; /* Increased width */
-height: 80px; /* Increased height */
+    opacity: 0.25;
+    /* opacity: 0.75; */
+    display: none;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'poppins';
+    text-transform: capitalize;
+    transition: all 0.2s;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px;
+    font-size: 1.25em;
+    background-color: #212529;
+    box-shadow: 2px 1px 50px -4px rgba(0,0,0,0.1);
+    border-color: #bcbfc2;
+    color: #bcbfc2;
+    border: solid 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 250px; /* Increased width */
+    height: 80px; /* Increased height */
 }
 
 /* .download-button:hover {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
 } */
-  
-
-
-
 
 /* Feature Container */
 .feature-container {
@@ -381,8 +374,6 @@ height: 80px; /* Increased height */
     align-items: center;
 }
 
-
-
 .feature-box i {
     font-size: 2em; /* Adjust the size as needed */
     margin-top: 10px; /* Space between text and icon */
@@ -394,9 +385,7 @@ height: 80px; /* Increased height */
     background: rgba(125, 125, 125, 0.2);
 }
 
-
 /* Footer */
-
 footer {
     position: absolute;
     top: 200vh;
@@ -406,7 +395,7 @@ footer {
     padding: 20px 0;
 }
 
-.footer-container .text-container{
+.footer-container .text-container {
     align-items: left;
     text-align: center;
     margin-left: 2%;
@@ -414,7 +403,6 @@ footer {
 
 .footer-container .text-container img {
     scale: 0.25;
-    
 }
 
 .footer-container {
@@ -431,7 +419,7 @@ footer {
 .icons-container svg {
     fill: #fff;
     width: 42px;
-    height: 42px; 
+    height: 42px;
     margin-left: 20px;
     cursor: pointer;
     transition: all 0.3s;
@@ -449,7 +437,7 @@ footer {
     font-family: 'Poppins', sans-serif;
 }
 
-.text-container h1{
+.text-container h1 {
     font-size: 1.25em;
     font-weight: 400;
     margin-bottom: 0;
@@ -465,6 +453,6 @@ footer {
     text-align: center;
     max-width: 600px;
     margin: 20px auto 0;
-    font-weight: 400; 
+    font-weight: 400;
     letter-spacing: 1px;
 }
