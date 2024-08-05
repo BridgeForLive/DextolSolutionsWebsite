@@ -103,6 +103,27 @@ body {
     transform: translateY(1px);
 }
 
+.navbar-buttons a {
+    text-decoration: none;
+    border-style: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    background: transparent;
+    color: rgba(255, 255, 255, 1); 
+}
+
+.navbar-buttons a:hover {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-buttons a:active {
+    transform: translateY(1px);
+}
+
 /* Middle Container */
 .middle-container {
     position: absolute;
