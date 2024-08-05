@@ -5,37 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenSL More - Documentation</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <style>
-        /* Additional styles specific to doc.html */
-        body {
-            background-color: #000; /* Set the same background color as index.html */
-            color: #fff; /* Text color */
-            font-family: 'Poppins', sans-serif; /* Ensure consistency with index.html */
-        }
-
-        .container {
-            max-width: 800px; /* Limit content width */
-            margin: 15vh auto;
-            padding: 0 20px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        body {
-            height: 100vh;
-        }
-
-        footer {
-            top: 100vh;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="doc.css">
+    <link rel="stylesheet" href=index.css">
 </head>
 <body>
     <div class="navbar">
@@ -55,27 +26,73 @@
         <h1>ZenSL - Optimize Your Computer for Gaming!</h1>
         <h2>What is ZenSL?</h2>
         <p>ZenSL is a Windows optimizer that modifies Windows settings, game settings, and creates a smooth OS experience!</p>
-        <h2>Features</h2>
+        <h2>Windows Settings</h2>
+        <h3>Windows Settings App</h3>
         <ul>
-            <li>One-click optimization and reversion</li>
-            <li>Anti-OS instability</li>
-            <li>Optimization results in less latency and more frames per second (FPS) in games</li>
+            <li><strong>Core Isolation (Microsoft Windows Defender)</strong>: Set <strong>OFF</strong></li>
+            <li><strong>Gaming Mode</strong>: Set <strong>ON</strong></li>
+            <li><strong>Background Apps (Privacy Settings)</strong>: Set <strong>OFF</strong></li>
         </ul>
-        <h2>What Settings Does ZenSL Affect?</h2>
+        <h3>Windows PowerPlan (Control Panel Settings => Power Management)</h3>
         <ul>
-            <li>Windows Power Plan settings</li>
-            <li>NVIDIA GPU panel settings and configuration</li>
-            <li>Intel Iris / Arc graphics panel settings</li>
-            <li>RAM, CPU, and disk settings (Intel & AMD)</li>
-            <li>Windows registry settings</li>
-            <li>Windows settings</li>
-            <li>Driver settings</li>
+            <li>Set GUID Scheme <strong>'Ultimate Performance'</strong> Active</li>
+            <li>Optimize Settings for <strong>Performance</strong></li>
         </ul>
-        <h2>What If Something Goes Wrong?</h2>
-        <p>You can revert the changes by entering the revert menu in ZenSL and pressing the "Revert Changes" button.</p>
+        <h3>Windows Task Manager Autostart-Apps (Microsoft Supplied Apps Only)</h3>
+        <ul>
+            <li>Microsoft Teams</li>
+            <li>Security Health System Tray</li>
+            <li>DevHome</li>
+            <li>Smartphone Link</li>
+            <li>Mobile Devices</li>
+            <li>Microsoft Edge</li>
+            <li>XBOX App Services</li>
+        </ul>
+        <h3>Windows Advanced Settings</h3>
+        <ul>
+            <li><strong>Manage VRAM</strong>: Set to best amount (calculated by Python script)</li>
+            <li><strong>Customize UI Features</strong>: Leave unnecessary things <strong>OFF</strong></li>
+        </ul>
+        <h3>Optimize Network</h3>
+        <ul>
+            <li>Set settings for the used Wi-Fi adapter for optimal gaming network speeds</li>
+        </ul>
+
+        <h2>Hardware Optimizations</h2>
+        <h3>GPU</h3>
+        <h4>NVIDIA</h4>
+        <ul>
+            <li><strong>General Optimizations</strong>: (To be added)</li>
+            <li><strong>RTX Series Optimizations</strong>: (To be added)</li>
+            <li><strong>GTX Series Optimizations</strong>: (To be added)</li>
+        </ul>
+        <h4>AMD</h4>
+        <ul>
+            <li><strong>General Optimizations</strong>: (To be added)</li>
+            <li><strong>Specific Series Optimizations</strong>: X: Not enough information gathered about AMD's graphic cards</li>
+        </ul>
+        <h4>INTEL</h4>
+        <ul>
+            <li><strong>Integrated Graphics Processing Units (IGPUs)</strong>: (To be added)</li>
+            <li><strong>Intel ARC Series Optimizations</strong>: X: Not enough information gathered about Intel's ARC graphic cards</li>
+        </ul>
+
+        <h3>CPU</h3>
+        <ul>
+            <li>No direct optimizations for CPUs from all architectures available yet</li>
+        </ul>
+        <h3>RAM</h3>
+        <ul>
+            <li>No direct optimizations for RAM from all manufacturers and types available yet</li>
+        </ul>
+        <h3>DISK</h3>
+        <ul>
+            <li>No direct optimizations for disks from all manufacturers and types available yet</li>
+        </ul>
+
+        <p style="font-style: italic; opacity: 0.75; text-align: center;">(05.08.2024)</p>
     </div>
     
-
     <footer>
         <div class="footer-container">
             <div class="text-container">
