@@ -41,7 +41,7 @@
             <h1>ZenSL Optimizer</h1>
             <p>Optimize Your Computer For Gaming.</p>
             <p style="color: #f39c12; font-weight: 400; letter-spacing: 1px;">RELEASE DATE : 21.08.24 - 16:00</p>
-            <button class="download-button" onclick="console.error('Download Not Available: No Release')">Download 1.9.1</button>
+            <button class="download-button" id="downloadInstaller" ></button>
             <!-- <p style="color: #f39c12; margin-top: 5px;">Windows 10 / 11</p> -->
             <div class="warning-text">
                 <i class="fas fa-exclamation-triangle" style="color: red;"></i>
@@ -65,6 +65,12 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        window.release_version = "1.9.5"
+        function updateButton() {
+            const button = document.getElementById('downloadInstaller');
+            button.textContent = `Download  ${release_version}`;
+        }
+        updateButton()
         document.getElementById("dcButton").addEventListener("click", function() {
                     window.open("https://discord.gg/jTpB2VZZ4q", "_blank");
                 });
@@ -74,8 +80,34 @@
                 scrollTop: window.innerHeight + 225
             }, 500);
         }
+        function downloadInstaller() {
+            const fileUrl = 'zensl/release/installer/ZenSL-RELEASE_x-Installer.exe';
+           
+
+            fetch(fileUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.blob(); // Convert the response to a Blob
+                })
+                .then(blob => {
+                    const url = URL.createObjectURL(blob); // Create a URL for the Blob
+                    const a = document.createElement('a'); // Create an anchor element
+                    a.href = url;
+                    a.download = "ZenSL-RELEASE_" + window.release_version + "-Installer.exe"; 
+                    document.body.appendChild(a); 
+                    a.click(); 
+                    document.body.removeChild(a); 
+                    URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+        });
+}
         // Event-Listener hinzufügen
         $('#navScroller').on('click', scrollDown);
+        $('#downloadInstaller').on('click', downloadInstaller);
         $('#midBtnScroller').on('click', scrollDown);
         // Fade-In-Animation
         $(window).scroll(function() {
