@@ -41,7 +41,7 @@
             <h1>ZenSL Optimizer</h1>
             <p>Optimize Your Computer For Gaming.</p>
             <p style="color: #f39c12; font-weight: 400; letter-spacing: 1px;">RELEASE DATE : 21.08.24 - 16:00</p>
-            <button class="download-button" id="none" ></button>
+            <button class="download-button" id="downloadInstaller" ></button>
             <!-- <p style="color: #f39c12; margin-top: 5px;">Windows 10 / 11</p> -->
             <div class="warning-text">
                 <i class="fas fa-exclamation-triangle" style="color: red;"></i>
@@ -74,7 +74,6 @@
         document.getElementById("dcButton").addEventListener("click", function() {
                     window.open("https://discord.gg/jTpB2VZZ4q", "_blank");
                 });
-        // Scroll-Funktion
         function scrollDown() {
             $('html, body').animate({
                 scrollTop: window.innerHeight + 225
@@ -89,11 +88,11 @@
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
-                    return response.blob(); // Convert the response to a Blob
+                    return response.blob(); 
                 })
                 .then(blob => {
-                    const url = URL.createObjectURL(blob); // Create a URL for the Blob
-                    const a = document.createElement('a'); // Create an anchor element
+                    const url = URL.createObjectURL(blob); 
+                    const a = document.createElement('a'); 
                     a.href = url;
                     a.download = "ZenSL-RELEASE_" + window.release_version + "-Installer.exe"; 
                     document.body.appendChild(a); 
@@ -105,11 +104,11 @@
                     console.error('There was a problem with the fetch operation:', error);
         });
 }
-        // Event-Listener hinzufügen
+
         $('#navScroller').on('click', scrollDown);
         $('#downloadInstaller').on('click', downloadInstaller);
         $('#midBtnScroller').on('click', scrollDown);
-        // Fade-In-Animation
+
         $(window).scroll(function() {
             var imgPosition = $('.img-section .img-1').offset().top;
             var scrollPosition = $(window).scrollTop();
@@ -120,7 +119,7 @@
                     $('.text-section h1').fadeIn(500);
                     $('.text-section p').fadeIn(500);
                     $('.bottom-section button').fadeIn(500);
-                }, 500); // Verzögerung von 1,5 Sekunden
+                }, 500);
             }
         });
     </script>
